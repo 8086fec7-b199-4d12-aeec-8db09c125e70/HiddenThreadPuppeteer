@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    image: puppeteer:latest
+    build:
+      context: ./docker/puppeteer/
+    command:
+      - 'node'
+      - './src/server.js'
+    ports:
+     - 80:80
+    volumes:
+    - ./:/application/
